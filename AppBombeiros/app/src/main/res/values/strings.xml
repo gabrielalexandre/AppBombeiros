@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">S.O.S</string>
+
+    <!--acttivity_tela1-->
+    <string name="txtNome_Completo">Nome completo</string>
+    <string name="txtDatansc">Data de nascimento</string>
+    <string name="txtCpf">CPF</string>
+    <string name="txtNomemae">Nome da mãe</string>
+    <string name="bt1">Concluir cadastro</string>
+
+    <!--activity-tela2-->
+    <string name="rb1">Emergência clínica</string>
+    <string name="rb2">Incêndio</string>
+    <string name="rb3">Acidentes de trânsito</string>
+    <string name="bt2">S.O.S</string>
+    <string name="txt_bombeiro">Corpo de Bombeiros-193</string>
+
+    <!--error-->
+    <string name="error_nome">Nome não preenchido</string>
+    <string name="error_cpf1">Preencha o CPF</string>
+    <string name="error_cpf2">CPF inválido</string>
+    <string name="error_nsc">Data de nascimento não preenchida</string>
+    <string name="error_mae">Nome da mãe não preenchido</string>
+</resources>
