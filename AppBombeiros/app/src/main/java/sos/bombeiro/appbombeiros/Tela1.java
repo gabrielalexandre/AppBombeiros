@@ -3,6 +3,7 @@ package sos.bombeiro.appbombeiros;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -17,6 +18,7 @@ public class Tela1 extends ActionBarActivity {
     private EditText edcpf;
     private EditText edmae;
     private Button concluir;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,12 @@ public class Tela1 extends ActionBarActivity {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         */
+
+        mToolbar = (Toolbar)findViewById(R.id.tb_main);
+        mToolbar.setTitle("S.O.S");
+        mToolbar.setSubtitle("Cadastro");
+        //mToolbar.setLogo(R.drawable.icon);
+        setSupportActionBar(mToolbar);
 
         final EditText campo_data_nascimento = (EditText) findViewById(R.id.editnsc);
         //utilização de mascaras no campo data de nascimento
