@@ -2,16 +2,19 @@ package sos.bombeiro.appbombeiros;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.HashMap;
+import java.util.Map;
 
-public class Tela1 extends ActionBarActivity {
+import dao.CadastroDAO;
+
+
+public class Tela1 extends AppCompatActivity {
 
     private EditText ednome;
     private EditText ednsc;
@@ -19,19 +22,27 @@ public class Tela1 extends ActionBarActivity {
     private EditText edmae;
     private Button concluir;
     private Toolbar mToolbar;
+    private CadastroDAO conecte;
+    private static String cpf, nome, mae, nsc;
+
+    public static Map<String, String> conectar(){
+        //HashMap
+        Map<String, String> mapa = new HashMap<>();
+        mapa.put("cpf", cpf);
+        mapa.put("nomeCidadao",nome);
+        mapa.put("nomeMae",mae);
+        mapa.put("dataNascimento", nsc);
+
+        return mapa;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela1);
 
-        /*codigo para instanciar conexao (INCOMPLETO)
 
-        WebView myWebView = (WebView) findViewById(R.id.webview);
-
-        WebSettings webSettings = myWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        */
 
         mToolbar = (Toolbar)findViewById(R.id.tb_main);
         mToolbar.setTitle("S.O.S");
@@ -52,6 +63,8 @@ public class Tela1 extends ActionBarActivity {
         edcpf = (EditText) findViewById(R.id.editcpf);
         edmae = (EditText) findViewById(R.id.editmae);
 
+        conecte = new CadastroDAO(this);
+
         //metodo para recuperar botao
         concluir = (Button) findViewById(R.id.concluir);
         concluir.setOnClickListener(new View.OnClickListener() {
@@ -59,10 +72,12 @@ public class Tela1 extends ActionBarActivity {
             public void onClick(View v) {
 
                 //Variaveis tipo String para validação de vazio
-                String nome = ednome.getText().toString();
-                String nsc = ednsc.getText().toString();
-                String cpf = edcpf .getText().toString();
-                String mae = edmae.getText().toString();
+                nome = ednome.getText().toString();
+                nsc = ednsc.getText().toString();
+                cpf = edcpf .getText().toString();
+                mae = edmae.getText().toString();
+
+
 
                 //variaveis tipo boolean para comparação e validação dos valores
                 boolean cpf_valido = Validator.validateCPF(campo_cpf.getText().toString());
@@ -91,11 +106,12 @@ public class Tela1 extends ActionBarActivity {
                     edmae.setError(getString(R.string.error_mae));
                 }
                 if(validar && cpf_valido){
+                    if(conecte.logar(nome, nsc, cpf, mae)) {
                         Intent trocatela = new
                         Intent(Tela1.this, Tela2.class);
                         Tela1.this.startActivity(trocatela);
                         Tela1.this.finish();
-
+                    }
                 }
             }
 

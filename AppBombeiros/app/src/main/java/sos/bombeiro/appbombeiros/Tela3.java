@@ -3,6 +3,7 @@ package sos.bombeiro.appbombeiros;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -14,7 +15,7 @@ import java.lang.Override;
 
 
 
-public class Tela3 extends ActionBarActivity {
+public class Tela3 extends AppCompatActivity {
 
     ImageView bt_voltar;
 

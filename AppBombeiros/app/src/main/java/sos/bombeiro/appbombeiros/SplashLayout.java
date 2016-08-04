@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Created by Gabriel on 05/07/2016.
  */
-public class SplashLayout extends ActionBarActivity {
+public class SplashLayout extends AppCompatActivity {
 
     //variavel que define o tempo em que a Splash Screen será exibida
     private static int SPLASH_TIME_OUT = 3000;
