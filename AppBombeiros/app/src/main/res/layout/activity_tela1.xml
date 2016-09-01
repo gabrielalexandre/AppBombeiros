@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3e3e3e"
+    android:background="#ffffff"
     tools:context=".BasicMaskActivity">
 
 
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#feffffff"
+                android:textColor="#fe000000"
                 android:text="@string/txtNome_Completo"
                 android:id="@+id/textNome" />
 
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text=""
-                android:textColor="#feffffff"
+                android:textColor="#fe000000"
                 android:ems="10"
                 android:id="@+id/editNome"
                 android:layout_alignParentTop="true"
@@ -54,14 +54,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffffff"
+                android:textColor="#fe000000"
                 android:text="@string/txtDatansc"
                 android:id="@+id/textnsc" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#feffffff"
+                android:textColor="#fe000000"
                 android:inputType="date"
                 android:ems="10"
                 android:id="@+id/editnsc" />
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffffff"
+                android:textColor="#fe000000"
                 android:text="@string/txtCpf"
                 android:id="@+id/textCpf" />
 
@@ -78,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned"
-                android:textColor="#feffffff"
+                android:textColor="#fe000000"
                 android:ems="10"
                 android:id="@+id/editcpf" />
 
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffffff"
+                android:textColor="#fe000000"
                 android:text="@string/txtNomemae"
                 android:id="@+id/textmae" />
 
@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:textColor="#feffffff"
+                android:textColor="#fe000000"
                 android:text=""
                 android:ems="10"
                 android:id="@+id/editmae"

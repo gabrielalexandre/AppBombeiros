@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,17 +36,20 @@ public class Tela2 extends AppCompatActivity {
     private EditText edlatitude, edlongitude;
     private Button sos;
     private String s;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+    private Toolbar mToolbar;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela2);
+
+        mToolbar = (Toolbar)findViewById(R.id.tb_main);
+        mToolbar.setTitle("S.O.S");
+        mToolbar.setSubtitle("Ocorrências");
+        //mToolbar.setLogo(R.drawable.icon);
+        setSupportActionBar(mToolbar);
 
 
         sos = (Button) findViewById(R.id.sos);
@@ -58,14 +62,13 @@ public class Tela2 extends AppCompatActivity {
                         HttpHelper enviaDados = new HttpHelper();
                         try {
                             s = enviaDados.doPost("http://10.0.2.2:8080/ExemploWebService/rest/ocorrencia/todas", Tela1.conectar(), "UTF-8");
-                            GPS gps = new GPS(null);
-                            gps.ativaGPS();
+                            GPS gps = new GPS();
+                            gps.startGPS();
                         } catch (IOException e) {
 
                         }
                     }
                 }.start();
-                Toast.makeText(getApplicationContext(), "Ocorrencia enviada.", Toast.LENGTH_SHORT).show();
             }
         });
 
